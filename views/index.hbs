@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Котики</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <h1>Кошкин дом</h1>
+        <a href="/">Ищут дом</a>
+        <a href="/is-home">Уже дома</a>
+        <a href="/search">Найти своего котика</a>
+    </header>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+        {{#each items}}
+        <div class="col">
+            <div class="card">
+                <img src="{{this.image}}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{this.name}}
+                        <span class="badge {{this.sex}}">
+                            {{this.sex}}
+                        </span>
+                    </h5>
+
+                    <p class="card-text">
+                        Порода: {{this.breed}} <br>
+                        Возраст: {{this.age}}
+                    </p>
+
+                    {{#if this.isActive}}
+                        <a href="/home?id={{this.id}}">Хочу забрать</a>
+                    {{else}}
+                        <b>Котик уже дома</b>
+                    {{/if}}
+
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+body {
+    padding: 20px;
+}
+.card {
+    margin-bottom: 20px;
+}
+
+.badge.male {
+    background-color: lightblue;
+}
+
+.badge.female {
+    background-color: lightpink;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cell {
+    width: 100px;
+}
+
+.badge.true {
+    background-color: lightgreen;
+}
+.badge.false {
+    background-color: blueviolet;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-form {
+    max-width: 600px;
+}
